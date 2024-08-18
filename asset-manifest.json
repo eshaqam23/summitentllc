@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/summitentllc/static/css/main.5c00667c.css",
+    "main.js": "/summitentllc/static/js/main.6a6ab6de.js",
+    "static/js/453.534b7a24.chunk.js": "/summitentllc/static/js/453.534b7a24.chunk.js",
+    "static/media/logo.svg": "/summitentllc/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/summitentllc/index.html",
+    "main.5c00667c.css.map": "/summitentllc/static/css/main.5c00667c.css.map",
+    "main.6a6ab6de.js.map": "/summitentllc/static/js/main.6a6ab6de.js.map",
+    "453.534b7a24.chunk.js.map": "/summitentllc/static/js/453.534b7a24.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c00667c.css",
+    "static/js/main.6a6ab6de.js"
+  ]
+}
