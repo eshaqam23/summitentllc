@@ -1,23 +1,48 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Home from './Components/Home';
+import About from './Components/About';
+import Contact from './Components/Contact';
+
 function App() {
+  const [tab, setTab] = useState("home");
+  let data;
+
+  switch(tab) {
+    case "home":
+      data = <Home />;
+      break;
+    case "about":
+      data = <About />;
+      break;
+    case "contact":
+      data = <Contact />;
+      break;
+    default:
+      data = <Home />;
+      break;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+          <div className="innerHeader">
+              <div className="leftHeader">
+                <div className="logo">
+                    <img src="../../summit.png" />
+                    <h2>Summit Enterprises, LLC</h2>
+                </div>
+              </div>
+              <nav>
+                  <button onClick={() => setTab("home")} className="navigation" id="home">Home</button>
+                  <button onClick={() => setTab("home")} className="navigation">About</button>
+                  <button onClick={() => setTab("home")} className="navigation">Contact</button>
+              </nav>
+          </div>
       </header>
+      {data}
     </div>
   );
 }

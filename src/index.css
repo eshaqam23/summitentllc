@@ -1,13 +1,363 @@
-body {
+/* Page Formatting */
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  height: 80px;
+  width: 100%;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  background-color: rgb(254, 251, 239);
+  position: fixed;
+  z-index: 5;
+}
+
+.innerHeader {
+  display: table;
+  grid-column: 1 / span 1;
+  justify-self: center;
+  height: 100%;
+  width: 90%;
+}
+
+.innerHeader .leftHeader {
+  display: table-cell;
+  height: 100%;
+  align-content: center;
+  float: left;
+}
+
+.innerHeader .logo {
+  display: flex;
+  flex: wrap;
+  height: 100%;
+  float: left;
+}
+
+.innerHeader .logo img {
+  align-self: center;
+  height: 60px;
+}
+
+.innerHeader .logo h2 {
+  align-self: center;
+  padding-left: 10px;
+  color: rgb(40, 74, 89);
+  font-family: "Reddit Sans Condensed";
+  font-size: 1.9em;
+ }
+
+.innerHeader nav {
+  display: table-cell;
+  align-content: center;
+  float: right;
+  height: 100%;
+}
+
+.innerHeader nav button {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: middle;
+  margin: 0 30px;
+  width: 70px;
+  border: none;
+  border-bottom: 2px solid rgb(254, 251, 239);
+  background-color: rgb(254, 251, 239);
+  color: rgb(40, 74, 89);
+  font-family: "Reddit Sans Condensed";
+  font-size: 1em;
+  position: relative;
+  top: 3px;
+}
+
+.innerHeader nav button:hover {
+  cursor: pointer;
+}
+
+.navigation {
+  position: relative;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navigation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: rgb(40, 74, 89);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navigation:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.active-tab {
+  color: rgb(40, 74, 89);
+}
+
+.active-tab::after {
+  width: 100%;
+  left: 0;
+}
+
+main {
+  position: relative;
+  top: 80px;
+}
+
+.heading {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  grid-template: 1fr / 1fr;
+  overflow: hidden;
+  background-color: rgb(40, 74, 89);
+}
+
+.heading .posterImg {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  width: 100%;
+  height: 650px;
+  align-self: center;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.heading .posterText {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  width: 40%;
+  z-index: 2;
+  margin: 0 auto;
+  align-self: center;
+  text-align: center;
+}
+
+.heading .posterText h1 {
+  font-family: "Montserrat";
+  color: rgb(254, 251, 239);
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+.heading .posterText p {
+  font-family: "Montserrat";
+  color: rgb(254, 251, 239);
+  font-size: 1.5em;
+}
+
+.ourApproach {
+  background-color: rgb(254, 251, 239);
+}
+
+.ourApproach h2 {
+  font-family: "Reddit Sans Condensed";
+  text-align: center;
+  padding: 30px;
+  font-size: 1.7em;
+  color: rgb(40, 74, 89);
+  text-transform: uppercase;
+}
+
+.flexBox {
+  background-color: rgb(254, 251, 239);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Aligns items at the start (top) */
+  flex-direction: row;
+  text-align: center;
+  padding: 0 30px;
+}
+
+.eachApproach {
+  display: inline-block;
+  font-family: "Montserrat";
+  margin: 30px 0;
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in the height */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.eachApproach h3 {
+  color: rgb(40, 74, 89);
+  height: 50px;
+  padding-bottom: 10px;
+  
+}
+
+.eachApproach p {
+  height: 200px;
+  line-height: 25px;
+  color: rgb(40, 74, 89);
+}
+
+.whyChooseUs {
+  background-color: rgb(40, 74, 89); /* Dark blue background for strong contrast */
+  padding: 60px 20px; /* Ample padding for spacious layout */
+  text-align: left; /* Left-align text for differentiation */
+  color: rgb(254, 251, 239); /* Light text color for contrast */
+}
+
+.whyChooseUs h2 {
+  font-family: "Reddit Sans Condensed"; /* Consistent heading font */
+  font-size: 1.7em; /* Larger font size for emphasis */
+  text-align: center;
+  margin-bottom: 40px; /* Space below the heading */
+  color: rgb(255, 255, 255); /* Pure white text for stark contrast */
+  text-transform: uppercase; /* Uppercase text for a bold statement */
+}
+
+.whyChooseUs .eachReason {
+  display: flex;
+  flex-direction: row; /* Align items horizontally for differentiation */
+  align-items: center;
+  background-color: rgb(255, 255, 255); /* White background inside each block */
+  color: rgb(40, 74, 89); /* Dark blue text */
+  margin-bottom: 30px; /* Space between each reason */
+  padding: 20px;
+  border-radius: 5px; /* Slightly rounded corners */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow for emphasis */
+}
+
+.whyChooseUs .eachReason h3 {
+  font-family: "Montserrat"; /* Consistent font */
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: rgb(40, 74, 89);
+  width: 20%;
+}
+
+.whyChooseUs .eachReason p {
+  font-family: "Montserrat";
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.contact {
+  background-color: rgb(254, 251, 239);
+  width: 100%;
+}
+
+.contact h2 {
+  text-align: center;
+  font-family: "Reddit Sans Condensed";
+  color: rgb(40, 74, 89);
+  padding: 30px;
+  font-size: 1.7em;
+  text-transform: uppercase;
+}
+
+form {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template: 1fr 2fr 1fr / 1fr 1fr 1fr;
+}
+
+input {
+  border: none;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  background-color: white;
+  padding: 5px 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="text"] {
+  font-family: "Montserrat";
+}
+
+input[type="email"] {
+  font-family: "Montserrat";
+}
+
+input[type="number"] {
+  font-family: "Montserrat";
+}
+
+input[type="submit"] {
+  font-family: "Montserrat";
+}
+
+
+.name {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+}
+
+.email {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+}
+
+.phone {
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 1;
+}
+
+.message {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 3;
+}
+
+.submit {
+  grid-row: 3 / span 1;
+  grid-column: 2 / span 1;
+  justify-self: center;
+  width: 40%;
+  transition: background-color 0.5s;
+}
+
+.submit:hover {
+  cursor: pointer;
+  background-color: rgb(40, 74, 89);
+  color: rgb(254, 251, 239);
+}
+
+.contactInfo {
+  text-align: center;
+  padding: 30px;
+}
+
+.contactInfo i {
+  color: rgb(40, 74, 89);
+  position: relative;
+  top: 6px;
+  padding: 5px;
+}
+
+.contactInfo p {
+  color: rgb(40, 74, 89);
+  font-family: "Montserrat";
+
 }
